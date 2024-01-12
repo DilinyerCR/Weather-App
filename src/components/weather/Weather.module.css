@@ -49,6 +49,11 @@
 }
 
 
+.error {
+    color: rgba(255, 11, 11, 0.788);
+    margin: 10px 0 0 15px;
+    font-size: 1.2rem;
+}
 
 
 .CenterContainer {

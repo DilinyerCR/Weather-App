@@ -5,13 +5,17 @@ import HumidityIcon from '../../assets/humidity.png'
 import WindIcon from '../../assets/wind.png'
 import { useState, useEffect } from 'react'
 
+
 const Weather = () => {
+
+    // ! ========== LOGICA / CODIGO ==========
     // * API KEY
     const API_KEY = "b9035c63ddc098b58b0cb27c9287ca26";
 
     // * Local States
     const [city, setCity] = useState('')
     const [weather, setweather] = useState(null)
+    const [isError, setIsError] = useState('');
 
     // * Component LifeCicle
     useEffect(() => {
@@ -45,21 +49,31 @@ const Weather = () => {
         if(city.length > 0) fetchApi()
     }
 
+    // * API Request
     const fetchApi = async() => {
         try {
             const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`)
+
+            if (!response.ok) {
+              throw new Error(
+                `Error: ${response.status} - ${response.statusText}`
+              );
+            }
 
             const data = await response.json()
 
             setweather(data)
 
+            setIsError("");
+
         } catch (error) {
-            console.error("Ops! ha ocurrido un error")
+          console.error(error); // Registrar el error en la consola
+          setIsError("Introduce una ciudad o pais valido");
         }
     }
 
 
-
+    // ! ========== Renderizado / HTML ==========
     return (
       <div className={styles.WeatherContainer}>
         {/* //! Search Section */}
@@ -75,17 +89,13 @@ const Weather = () => {
               <img src={SearchIcon} alt="" />
             </button>
           </form>
-          {/* <input
-            placeholder="Search by city"
-            type="text"
-            value={city}
-            onChange={handleCity}
-           
-          />
-          <button type='submit' onClick={handleSubmit}>
-            <img src={SearchIcon} alt="" />
-          </button> */}
         </div>
+
+
+        {/* //! Error */}
+        <p className={styles.error}>{isError}</p> {/* Mostrar el mensaje de error*/}
+        
+
 
         {/* //! Center Section */}
         <div className={styles.CenterContainer}>
@@ -101,6 +111,7 @@ const Weather = () => {
             </>
           )}
         </div>
+
 
         {/* //! Bot Section */}
         <div className={styles.BotContainer}>
