@@ -1,0 +1,157 @@
+.WeatherContainer {
+    padding: 28px;
+    width: 300px;
+    border-radius: 12px;
+    background-image: linear-gradient(180deg, #130754 0%, #3b2f80 100%);
+}
+
+.SearchContainer form {
+    display: flex;
+    justify-content: space-between;
+}
+
+.SearchContainer input{
+    padding: 15px;
+    width: 196px;
+    height: 40px;
+    border-radius: 50px;
+    border: none;
+    color: rgba(0, 0, 0, 0.8);
+    font-family: 'Lemon', serif;
+    font-size: 1.2rem;
+    outline: none;
+}
+
+.SearchContainer input::placeholder {
+    color: gray;
+    font-family: 'Lemon', serif;
+    font-size: 1.1rem;
+}
+
+.SearchContainer button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+.SearchContainer button:hover {
+    cursor: pointer;
+    background-color: rgb(238, 238, 238);
+}
+
+.SearchContainer button img {
+    width: 11px;
+}
+
+
+
+
+.CenterContainer {
+    padding-top: 20px;
+    color: white;
+    text-align: center;
+}
+
+.CenterContainer img {
+    width: 130px;
+}
+
+.CenterContainer .CenterContainer_grades {
+    font-size: 4rem;
+}
+
+.CenterContainer .CenterContainer_city {
+    font-size: 3rem;
+}
+
+
+
+
+
+.BotContainer {
+    margin-top: 40px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Humidity img, .Wind img {
+    margin-top: 4px;
+    width: 24px;
+}
+
+.Humidity, .Wind{
+    display: flex;
+}
+
+.Humidity div, .Wind div {
+    padding: 5px;
+}
+
+.Number {
+    font-size: 1.5rem;
+}
+
+.Text {
+    font-size: 1.2rem;
+}
+
+
+
+
+/* ! ====== Media Queries ======*/
+@media (min-width: 768px) {
+    .WeatherContainer {
+        padding: 50px;
+        width: 460px;
+    }
+
+    .SearchContainer input {
+        padding: 15px;
+        width: 308px;
+        height: 45px;
+    }
+
+    .SearchContainer button {
+        width: 45px;
+        height: 45px;
+    }
+
+    .SearchContainer input{
+        font-size: 1.3rem;
+    }
+    
+    .SearchContainer input::placeholder {
+        font-size: 1.2rem;
+    }
+
+    .CenterContainer img {
+        width: 180px;
+    }
+
+    .CenterContainer .CenterContainer_grades {
+        font-size: 5rem;
+    }
+    
+    .CenterContainer .CenterContainer_city {
+        font-size: 4rem;
+    }
+
+    .BotContainer {
+        justify-content: space-around;
+    }
+
+    .Number {
+        font-size: 1.7rem;
+    }
+    
+    .Text {
+        font-size: 1.4rem;
+    }
+
+  }

@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Lemon&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  padding: 100px 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(0deg, rgba(243, 229, 255, 1) 0%, rgba(178, 152, 193, 1) 100%);
+  font-family: 'Lemon', serif;
+}
+
+html {
+  font-size: 62.5%;
+}
