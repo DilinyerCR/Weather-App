@@ -7,7 +7,7 @@ import { useState, useEffect } from 'react'
 
 const Weather = () => {
     // * API KEY
-    const API_KEY = import.meta.env.VITE_API_KEY;
+    const API_KEY = "b9035c63ddc098b58b0cb27c9287ca26";
 
     // * Local States
     const [city, setCity] = useState('')
